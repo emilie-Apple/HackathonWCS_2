@@ -26,6 +26,7 @@ DefiBundle\Entity\Utilisateurs:
             type: string
             length: 255
             column: photo_profil
+            nullable: true
 
 
     manyToMany:
