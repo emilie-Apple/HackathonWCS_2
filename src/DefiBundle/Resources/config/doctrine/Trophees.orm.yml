@@ -1,0 +1,23 @@
+DefiBundle\Entity\Trophees:
+    type: entity
+    table: null
+    repositoryClass: DefiBundle\Repository\TropheesRepository
+    id:
+        idTrophees:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomTrophees:
+            type: string
+            length: 255
+            nullable: true
+            column: nom_trophees
+
+    manyToMany:
+            fidTrophees:
+                targetEntity: DefiBundle\Entity\Utilisateurs
+                mappedBy: Trophees
+
+    lifecycleCallbacks: {  }
