@@ -13,3 +13,24 @@
 {
     text-align: center;
 }
+
+.i
+{
+    text-align: center;
+}
+
+.infos-globales
+{
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10%;
+}
+
+.defi-en-cours
+{
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10%;
+}
