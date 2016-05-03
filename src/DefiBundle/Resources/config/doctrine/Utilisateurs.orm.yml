@@ -1,0 +1,28 @@
+DefiBundle\Entity\Utilisateurs:
+    type: entity
+    table: null
+    repositoryClass: DefiBundle\Repository\UtilisateursRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        pseudo:
+            type: string
+            length: '30'
+            unique: true
+        sexe:
+            type: string
+            length: '1'
+            nullable: true
+        dateNaissance:
+            type: date
+            nullable: true
+            column: date_naissance
+        photoProfil:
+            type: string
+            length: 255
+            column: photo_profil
+    lifecycleCallbacks: {  }
