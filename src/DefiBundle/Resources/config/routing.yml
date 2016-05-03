@@ -1,0 +1,3 @@
+defi_homepage:
+    path:     /
+    defaults: { _controller: DefiBundle:Default:index }
