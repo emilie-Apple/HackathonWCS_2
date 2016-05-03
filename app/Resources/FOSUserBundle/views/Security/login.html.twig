@@ -2,23 +2,24 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}GoGame{% endblock %}</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootstrap.css') }}" type="text/css" />
         <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootsrap-theme.css') }}" type="text/css" />
         <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" type="text/css" />
         <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
 
 <div class="mobilenav">
-    <li><a href="#">Accueil</a></li>
-    <li><a href="#"></a>Mon profil</li>
-    <li><a href="#"></a>Défis tes amis</li>
-    <li><a href="#"></a>Trophées</li>
-    <li><a href="#"></a>Communauté</li>
+    <li><a href="#"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
+    <li><a href="#"><i class="fa fa-user"></i></a>&nbsp; Mon profil</li>
+    <li><a href="#"><i class="fa fa-gamepad"></i></a>&nbsp; Défis tes amis</li>
+    <li><a href="#"><i class="fa fa-trophy"></i></a>&nbsp; Trophées</li>
+    <li><a href="#"><i class="fa fa-users"></i></a>&nbsp; Communauté</li>
 </div>
 
 <a href="javascript:void(0)" class="icon">
@@ -27,6 +28,7 @@
         <div class="menui mid-menu"></div>
         <div class="menui bottom-menu"></div>
     </div>
+    <h1>GoGame</h1>
 </a>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 

@@ -133,3 +133,11 @@ form
     margin: 100px;
 
 }
+h1
+{
+    color: #eea236;
+    display: inline;
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
