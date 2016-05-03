@@ -44,8 +44,7 @@ DefiBundle\Entity\Sport:
                         referencedColumnName: id_sport
                 inverseJoinColumns:
                     Utilisateurs_id:
-                        referencedColumnName: id_utilisateurs
-
+                        referencedColumn: id
 
 
     lifecycleCallbacks: {  }
