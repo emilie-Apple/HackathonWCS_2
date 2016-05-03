@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     {% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-</head>
+
+{% block body %}
 <body>
 
 <div class="mobilenav">
@@ -33,7 +33,7 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 <script src="{{ asset('bundles/defi/js/index.js') }}"></script>
-{% block body %}{% endblock %}
+{% endblock %}
 {% block javascripts %}{% endblock %}
 
 </html>
