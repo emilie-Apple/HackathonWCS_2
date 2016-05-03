@@ -1,6 +1,69 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('bundles/defi/css/font-awesome.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootstrap.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootsrap-theme.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" type="text/css" />
+{% endblock %}
+
 <div class="fos_user_user_show">
     <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
+    <p>{{ user.sexe }}</p>
     <a href="{{ 'edit' }}">Modifier</a>
+
+
+
+    {% block body %}
+        <div class="site-container">
+            <div class="site-pusher">
+                <header class="header">
+                    <a href="#" class="header__icon" id="header__icon"></a>
+                    <nav class="menu">
+                        <!-- Notre menu -->
+                    </nav>
+                </header>
+                <div class="site-content">
+                    <div class="container">
+                        <!-- Le contenu du site -->
+                    </div>
+                </div>
+                <div class="site-cache" id="site-cache">
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <img class="menu-burger" src="{{ asset('bundles/defi/img/menu-burger.png') }}" alt="Menu burger" title="Accédez au menu !" />
+            <strong>NomApplication</strong>
+            <!-- Welcome user, à mettre en BDD -->
+        </div>
+
+        <div class="photo-profil">
+            <img src="{{ asset('bundles/defi/img/avatar.png') }}" title="Avatar de mon profil !" alt="Mon avatar" />
+        </div>
+
+        <div class="modifier-profil">
+            <a href="#"><span>Modifier mon profil !</span></a>
+        </div>
+
+        <div class="infos-globales">
+            <i class="fa fa-user user" aria-hidden="true">Mes informations :</i>
+            <br />(A mettre en relation avec la base de données) :
+            <br />Pseudo : /Utilisateurs.pseudo\
+            <br />Sport favoris : /Utilisateurs.Sport\
+        </div>
+
+        <div class="Defi-en-cours">
+            <i class="fa fa-trophy" aria-hidden="true">Mes défis en cours</i>
+            <br /> Liste des défis !
+        </div>
+
+        <div class="Historique">
+
+        </div>
+
+
+    {% endblock %}
 </div>
 BOUH
