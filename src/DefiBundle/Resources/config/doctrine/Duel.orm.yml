@@ -1,0 +1,22 @@
+DefiBundle\Entity\Duel:
+    type: entity
+    table: null
+    repositoryClass: DefiBundle\Repository\DuelRepository
+    id:
+        idDuel:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        fidUser1:
+            type: integer
+            nullable: true
+            unique: true
+            column: fid_user1
+        fidUser2:
+            type: integer
+            nullable: true
+            unique: true
+            column: fid_user2
+    lifecycleCallbacks: {  }

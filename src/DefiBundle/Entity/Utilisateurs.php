@@ -13,7 +13,7 @@ class Utilisateurs extends BaseUser
     /**
      * @var int
      */
-    protected $id;
+    protected $idUtilisateurs;
 
     /**
      * @var string
@@ -35,15 +35,18 @@ class Utilisateurs extends BaseUser
      */
     private $photoProfil;
 
+    private $fidtrophees;
+
+    private $fidUtilisateurs;
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
+    public function getIdUtilisateurs()
     {
-        return $this->id;
+        return $this->idUtilisateurs;
     }
 
     /**

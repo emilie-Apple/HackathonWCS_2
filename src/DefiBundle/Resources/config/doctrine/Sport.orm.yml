@@ -1,0 +1,51 @@
+DefiBundle\Entity\Sport:
+    type: entity
+    table: null
+    repositoryClass: DefiBundle\Repository\SportRepository
+    id:
+        idSport:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomSport:
+            type: string
+            length: 255
+            nullable: true
+            unique: true
+            column: nom_sport
+        imageSport:
+            type: string
+            length: 255
+            column: image_sport
+
+    manyToMany:
+        fidcategorie:
+            targetEntity: DefiBundle\Entity\Categorie
+            inversedBy: Sport
+            joinTable:
+                name: Categorie_Sport
+                joinColumns:
+                    Sport_id:
+                        referencedColumnName: id_sport
+                inverseJoinColumns:
+                    Categorie_id:
+                        referencedColumnName: id_categorie
+
+
+        fidUtilisateurs:
+            targetEntity: DefiBundle\Entity\Utilisateurs
+            inversedBy: Sport
+            joinTable:
+                name: Utilisateurs_Sport
+                joinColumns:
+                    Sport_id:
+                        referencedColumnName: id_sport
+                inverseJoinColumns:
+                    Utilisateurs_id:
+                        referencedColumnName: id_utilisateurs
+
+
+
+    lifecycleCallbacks: {  }

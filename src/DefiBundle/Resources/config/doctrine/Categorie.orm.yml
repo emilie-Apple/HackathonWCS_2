@@ -1,0 +1,23 @@
+DefiBundle\Entity\Categorie:
+    type: entity
+    table: null
+    repositoryClass: DefiBundle\Repository\CategorieRepository
+    id:
+        idCategorie:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomCategorie:
+            type: string
+            length: 255
+            nullable: true
+            column: nom_categorie
+
+    manyToMany:
+        fidCategorie:
+            targetEntity: DefiBundle\Entity\Sport
+            mappedBy: Categorie
+
+    lifecycleCallbacks: {  }
