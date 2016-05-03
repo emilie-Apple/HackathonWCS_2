@@ -1,4 +1,15 @@
 .header
 {
-    font-size: 44px;
+    background-color: blue;
+}
+
+.menu-burger
+{
+    width: 10%;
+    display: inline;
+}
+
+.photo-profil
+{
+    text-align: center;
 }

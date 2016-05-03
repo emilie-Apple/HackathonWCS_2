@@ -4,7 +4,9 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" />
+            <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootstrap.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootsrap-theme.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" type="text/css" />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>

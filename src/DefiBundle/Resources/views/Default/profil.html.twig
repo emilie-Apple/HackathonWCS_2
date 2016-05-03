@@ -1,3 +1,27 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootstrap.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootsrap-theme.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
 <div class="header">
-    bonjour
+    <img class="menu-burger" src="{{ asset('bundles/defi/img/menu-burger.png') }}" alt="Menu burger" title="Accédez au menu !" />
+    <strong>NomApplication</strong>
+    <!-- Welcome user, à mettre en BDD -->
 </div>
+
+    <div class="photo-profil">
+        <img src="{{ asset('bundles/defi/img/avatar.png') }}" title="Avatar de mon profil !" alt="Mon avatar" />
+    </div>
+
+    <div class="modifier-profil">
+        <a href="#"><span>Modifier mon profil !</span></a>
+    </div>
+
+    <div class="Infos-globales">
+
+    </div>
+
+
+{% endblock %}
