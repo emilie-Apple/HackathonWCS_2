@@ -13,6 +13,7 @@ DefiBundle\Entity\Utilisateurs:
             type: string
             length: '30'
             unique: true
+            nullable: true
         sexe:
             type: string
             length: '1'
@@ -25,4 +26,5 @@ DefiBundle\Entity\Utilisateurs:
             type: string
             length: 255
             column: photo_profil
+            nullable: true
     lifecycleCallbacks: {  }

@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('DefiBundle:Default:index.html.twig');
     }
+
+    public function showAction()
+    {
+        return $this->render('DefiBundle:Default:profil.html.twig');
+    }
 }

@@ -1,3 +1,7 @@
 defi_homepage:
     path:     /
     defaults: { _controller: DefiBundle:Default:index }
+
+defi_profil:
+    path:    /profil
+    defaults: { _controller: DefiBundle:Default:show}
