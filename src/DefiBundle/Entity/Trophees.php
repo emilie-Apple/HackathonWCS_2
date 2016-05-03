@@ -56,5 +56,45 @@ class Trophees
     {
         return $this->nomTrophees;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fidTrophees = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add fidTrophee
+     *
+     * @param \DefiBundle\Entity\Utilisateurs $fidTrophee
+     *
+     * @return Trophees
+     */
+    public function addFidTrophee(\DefiBundle\Entity\Utilisateurs $fidTrophee)
+    {
+        $this->fidTrophees[] = $fidTrophee;
+
+        return $this;
+    }
+
+    /**
+     * Remove fidTrophee
+     *
+     * @param \DefiBundle\Entity\Utilisateurs $fidTrophee
+     */
+    public function removeFidTrophee(\DefiBundle\Entity\Utilisateurs $fidTrophee)
+    {
+        $this->fidTrophees->removeElement($fidTrophee);
+    }
+
+    /**
+     * Get fidTrophees
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFidTrophees()
+    {
+        return $this->fidTrophees;
+    }
+}

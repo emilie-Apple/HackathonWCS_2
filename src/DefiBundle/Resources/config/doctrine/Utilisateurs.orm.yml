@@ -3,7 +3,7 @@ DefiBundle\Entity\Utilisateurs:
     table: null
     repositoryClass: DefiBundle\Repository\UtilisateursRepository
     id:
-        idUtilisateurs:
+       id:
             type: integer
             id: true
             generator:
@@ -26,25 +26,31 @@ DefiBundle\Entity\Utilisateurs:
             type: string
             length: 255
             column: photo_profil
+            nullable: true
 
 
     manyToMany:
-            fidtrophees:
-                targetEntity: DefiBundle\Entity\Trophees
-                inversedBy: Utilisateurs
-                joinTable:
-                    name: Trophees_utilisateurs
-                    joinColumns:
-                        Utilisateurs_id:
-                            referencedColumnName: id_utilisateurs
-                    inverseJoinColumns:
-                        Trophees_id:
-                            referencedColumnName: id_trophees
+        fidtrophees:
+            targetEntity: DefiBundle\Entity\Trophees
+            inversedBy: Utilisateurs
+            joinTable:
+                name: Trophees_utilisateurs
+                joinColumns:
+                    Utilisateurs_id:
+                        referencedColumn: id
+                inverseJoinColumns:
+                    Trophees_id:
+                        referencedColumnName: id_trophees
+
+        fidUtilisateurs:
+            targetEntity: DefiBundle\Entity\Sport
+            mappedBy: Utilisateurs
 
 
-            fidUtilisateurs:
-                targetEntity: DefiBundle\Entity\Sport
-                mappedBy: Utilisateurs
+
+
+
+
 
 
     lifecycleCallbacks: {  }

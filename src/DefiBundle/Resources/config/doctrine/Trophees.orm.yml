@@ -16,8 +16,8 @@ DefiBundle\Entity\Trophees:
             column: nom_trophees
 
     manyToMany:
-            fidTrophees:
-                targetEntity: DefiBundle\Entity\Utilisateurs
-                mappedBy: Trophees
+        fidTrophees:
+            targetEntity: DefiBundle\Entity\Utilisateurs
+            mappedBy: Trophees
 
     lifecycleCallbacks: {  }
