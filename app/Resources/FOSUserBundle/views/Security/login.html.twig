@@ -1,3 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootstrap.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/defi/css/bootsrap-theme.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" />
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+
+<div class="mobilenav">
+    <li><a href="#">Accueil</a></li>
+    <li><a href="#"></a>Mon profil</li>
+    <li><a href="#"></a>Défis tes amis</li>
+    <li><a href="#"></a>Trophées</li>
+    <li><a href="#"></a>Communauté</li>
+</div>
+
+<a href="javascript:void(0)" class="icon">
+    <div class="hamburger">
+        <div class="menui top-menu"></div>
+        <div class="menui mid-menu"></div>
+        <div class="menui bottom-menu"></div>
+    </div>
+</a>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src="{{ asset('bundles/defi/js/index.js') }}"></script>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+
+</html>
+{% trans_default_domain 'FOSUserBundle' %}
 {% block fos_user_content %}
 {% if error %}
     <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
