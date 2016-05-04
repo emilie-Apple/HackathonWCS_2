@@ -2,6 +2,7 @@
 
 namespace DefiBundle\Controller;
 
+use DefiBundle\DefiBundle;
 use DefiBundle\Entity\Utilisateurs;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -14,8 +15,12 @@ class DefaultController extends Controller
 
     public function showAction()
     {
+        $em = $this->getDoctrine()->getManager();
         
-        return $this->render('DefiBundle:Default:profil.html.twig');
+        $listetrophees = $em->getRepository('DefiBundle:Trophees')->findAll();
+        return $this->render('DefiBundle:Default:profil.html.twig', array(
+            'listetrophees' => $listetrophees
+        ));
     }
 
     public function defiAction()
@@ -34,6 +39,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         
         $listechallenger = $em->getRepository('DefiBundle:Utilisateurs')->findAll();
+        
         
         return $this->render('DefiBundle:Default:challenger.html.twig', array(
             'listechallenger' => $listechallenger

@@ -22,6 +22,10 @@ class Trophees
 
     private $fidTrophees;
 
+    private $descTrophees;
+
+    private $imgTrophees;
+
 
     /**
      * Get id
@@ -96,5 +100,29 @@ class Trophees
     public function getFidTrophees()
     {
         return $this->fidTrophees;
+    }
+
+    /**
+     * Set descTrophees
+     *
+     * @param string $descTrophees
+     *
+     * @return Trophees
+     */
+    public function setDescTrophees($descTrophees)
+    {
+        $this->descTrophees = $descTrophees;
+
+        return $this;
+    }
+
+    /**
+     * Get descTrophees
+     *
+     * @return string
+     */
+    public function getDescTrophees()
+    {
+        return $this->descTrophees;
     }
 }

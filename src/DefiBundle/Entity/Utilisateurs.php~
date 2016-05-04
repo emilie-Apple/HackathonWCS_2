@@ -219,4 +219,38 @@ class Utilisateurs extends BaseUser
     {
         return $this->fidUtilisateurs;
     }
+
+    /**
+     * Add fidSport
+     *
+     * @param \DefiBundle\Entity\Sport $fidSport
+     *
+     * @return Utilisateurs
+     */
+    public function addFidSport($fidSport)
+    {
+        $this->fidSport[] = $fidSport;
+
+        return $this;
+    }
+
+    /**
+     * Remove fidSport
+     *
+     * @param \DefiBundle\Entity\Sport $fidSport
+     */
+    public function removeFidSport(\DefiBundle\Entity\Sport $fidSport)
+    {
+        $this->fidSport->removeElement($fidSport);
+    }
+
+    /**
+     * Get fidSport
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFidSport()
+    {
+        return $this->fidSport;
+    }
 }

@@ -43,37 +43,39 @@
         <a href="{{ 'edit' }}"><span>Modifier mon profil !</span></a>
     </div>
 
-    <div class="infos-globales">
-        <i class="fa fa-user user" aria-hidden="true">Mes informations :</i>
-        <br /> Pseudonyme: {{ user.pseudo }}
-        <br /> Sexe : {{ user.sexe }}
-        <br /> Date de naissance : {{ user.dateNaissance|date('d-m-Y') }}
-        <br /> Centres d'intêrets :
-    </div>
 
-    <div class="Defi-en-cours">
-        <i class="fa fa-trophy" aria-hidden="true">Mes défis en cours</i>
-        <br /> Liste des défis !
-    </div>
+
+
 
     <!-- Accordéon Bootstrap -->
     <div class="accordion" id="myAccordion">
         <div class="panel">
-            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-1" data-parent="#myAccordion">Question 1?</button>
+            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-1" data-parent="#myAccordion"><i class="fa fa-user"></i>&nbsp; Informations générales :</button>
             <div id="collapsible-1" class="collapse">
-                <p>Etiam posuere quam ac quam. Maecenas aliquet accumsan leo. Nullam dapibus fermentum ipsum. Etiam quis quam. Integer lacinia. Nulla est.</p>
+                <div class="infos-globales">
+                    <i class="fa fa-user user" aria-hidden="true">Mes informations :</i>
+                    <br /> Pseudonyme: {{ user.pseudo }}
+                    <br /> Sexe : {{ user.sexe }}
+                    <br /> Date de naissance : {{ user.dateNaissance|date('d-m-Y') }}
+                    <br /> Centres d'intêrets :
+                </div>
             </div>
         </div>
         <div class="panel">
-            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-2" data-parent="#myAccordion">Question 2?</button>
+            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-2" data-parent="#myAccordion"><i class="fa fa-gamepad"></i>&nbsp; Mes défis en cours :</button>
             <div id="collapsible-2" class="collapse">
-                <p>Etiam posuere quam ac quam. Maecenas aliquet accumsan leo. Nullam dapibus fermentum ipsum. Etiam quis quam. Integer lacinia. Nulla est.</p>
+                <div class="Defi-en-cours">
+                    <i class="fa fa-trophy" aria-hidden="true">Mes défis en cours</i>
+                    <br /> Liste des défis !
+                </div>
             </div>
         </div>
         <div class="panel">
-            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-3" data-parent="#myAccordion">Question 3?</button>
+            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-3" data-parent="#myAccordion"><i class="fa fa-trophy"></i>&nbsp; Mes trophées :</button>
             <div id="collapsible-3" class="collapse">
-                <p>Etiam posuere quam ac quam. Maecenas aliquet accumsan leo. Nullam dapibus fermentum ipsum. Etiam quis quam. Integer lacinia. Nulla est.</p>
+                {% for listetrophees in listetrophees %}
+                    {{ listetrophees.idTrophees }}
+                {% endfor %}
             </div>
         </div>
     </div>
