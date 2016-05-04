@@ -19,11 +19,11 @@
     <div class="header-fixed">
         <!-- Affichage du burger -->
         <div class="mobilenav">
-            <li><a href="#"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
-            <li><a href="#"><i class="fa fa-user"></i></a>&nbsp; Mon profil</li>
-            <a href="{{ path('defi_liste_sports') }}"><li><i class="fa fa-gamepad"></i>&nbsp; Défis tes amis</li></a>
-            <li><a href="#"><i class="fa fa-trophy"></i></a>&nbsp; Trophées</li>
-            <li><a href="#"><i class="fa fa-users"></i></a>&nbsp; Communauté</li>
+            <li><a href="{{ path('defi_homepage') }}"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
+            <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user"></i>&nbsp; Mon profil</li></a>
+            <li><a href="{{ path('defi_liste_sports') }}"><i class="fa fa-gamepad"></i>&nbsp; Défis tes amis</li></a>
+            <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-trophy"></i>&nbsp; Trophées</li></a>
+            <li><a href="#"><i class="fa fa-users"></i>&nbsp; Communauté</a></li>
         </div>
 
         <!-- Fonction Javascript pour l'affichage des barres du Burger -->
@@ -38,6 +38,8 @@
         <h1>GoGame</h1>
     </div>
 
+
+        <h3 id="connexion">Connexion</h3>
 
 
 
@@ -56,13 +58,13 @@
 
     <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
     <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-
+    <br />
     <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
     <input type="password" id="password" name="_password" required="required" />
-
+    <br />
     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
     <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
-
+    <br />
     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
 </form>
 {% endblock fos_user_content %}

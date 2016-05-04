@@ -16,6 +16,7 @@ body
 {
     background-color: white;
     border: 1px solid white;
+    height: 60px;
 }
 
 .top-animate {
@@ -109,9 +110,7 @@ body
 .mobilenav li a:hover
 {
     color: #222222;
-
 }
-
 
 .mobilenav li:first-child {
     margin-top: 60px;
@@ -151,8 +150,8 @@ body
 form
 {
     margin: 100px;
-
 }
+
 h1
 {
     color: #eea236;
@@ -160,6 +159,7 @@ h1
     padding-top: 10px;
     padding-left: 280px;
     text-decoration: none;
+    font-size: 48px;
 }
 
 .affichage_sports
@@ -232,5 +232,10 @@ img
     width: 70%;
 }
 
+#connexion
+{
+    text-align: center;
+    font-size: 45px;
+}
 
 
