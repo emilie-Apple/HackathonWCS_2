@@ -7,28 +7,101 @@
     <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" type="text/css" />
 {% endblock %}
 
+
+
 {% block body %}
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html { height: 100% }
+        body { height: 80%; margin: 10px; padding: 10px }
+        #map_canvas { height: 80% ; width:80%;}
+    </style>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript">
+
+    </script>
     <div class="mobilenav">
-        <li><a href="#"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
-        <li><a href="#"><i class="fa fa-user"></i></a>&nbsp; Mon profil</li>
-        <a href="{{ path('defi_liste_sports') }}"><li><i class="fa fa-gamepad"></i>&nbsp; Défis tes amis</li></a>
-        <li><a href="#"><i class="fa fa-trophy"></i></a>&nbsp; Trophées</li>
-        <li><a href="#"><i class="fa fa-users"></i></a>&nbsp; Communauté</li>
+    <li><a href="#"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
+    <li><a href="#"><i class="fa fa-user"></i></a>&nbsp; Mon profil</li>
+    <a href="{{ path('defi_liste_sports') }}"><li><i class="fa fa-gamepad"></i>&nbsp; Défis tes amis</li></a>
+    <li><a href="#"><i class="fa fa-trophy"></i></a>&nbsp; Trophées</li>
+    <li><a href="#"><i class="fa fa-users"></i></a>&nbsp; Communauté</li>
+</div>
+
+<a href="javascript:void(0)" class="icon">
+    <div class="hamburger">
+        <div class="menui top-menu"></div>
+        <div class="menui mid-menu"></div>
+        <div class="menui bottom-menu"></div>
     </div>
-
-    <a href="javascript:void(0)" class="icon">
-        <div class="hamburger">
-            <div class="menui top-menu"></div>
-            <div class="menui mid-menu"></div>
-            <div class="menui bottom-menu"></div>
-        </div>
-    </a>
+</a>
     <h1>GoGame</h1>
+    var previousPosition = null;
 
+    function initialize() {
+        map = new google.maps.Map(document.getElementById("map_canvas"), {
+            zoom: 19,
+            center: new google.maps.LatLng(48.858565, 2.347198),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+    }
+
+    if (navigator.geolocation)
+        var watchId = navigator.geolocation.watchPosition(successCallback, null, {enableHighAccuracy:true});
+    else
+        alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
+
+    function successCallback(position){
+        map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+            map: map
+        });
+        if (previousPosition){
+            var newLineCoordinates = [
+                new google.maps.LatLng(previousPosition.coords.latitude, previousPosition.coords.longitude),
+                new google.maps.LatLng(position.coords.latitude, position.coords.longitude)];
+
+            var newLine = new google.maps.Polyline({
+                path: newLineCoordinates,
+                strokeColor: "#FF0000",
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+            newLine.setMap(map);
+        }
+        previousPosition = position;
+    };
+</script>
+</head>
 
     <div class="photo-profil">
         <img src="{{ asset('bundles/defi/img/avatar.png') }}" title="Avatar de mon profil !" alt="Mon avatar" />
     </div>
+        <div class="site-container">
+            <div class="site-pusher">
+                <header class="header">
+                    <a href="#" class="header__icon" id="header__icon"></a>
+                    <nav class="menu">
+                        <!-- Notre menu -->
+                    </nav>
+                </header>
+                <div class="site-content">
+                    <div class="container">
+                        <!-- Le contenu du site -->
+                    </div>
+                </div>
+                <div class="site-cache" id="site-cache">
+                </div>
+            </div>
+        </div>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="{{ asset('bundles/defi/js/index.js') }}"></script>
+            <!-- Welcome user, à mettre en BDD -->
+        </div>
 
     <div class="modifier-profil">
         <a href="{{ 'edit' }}"><span>Modifier mon profil !</span></a>
@@ -46,6 +119,9 @@
         <i class="fa fa-trophy" aria-hidden="true">Mes défis en cours</i>
         <br /> Liste des défis !
     </div>
+
+
+
 
     <div class="Historique">
     </div>
@@ -81,4 +157,6 @@
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
 
-{% endblock %}
+
+ {% endblock %}
+

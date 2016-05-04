@@ -6,7 +6,7 @@
     /* For some Androids */
 }
 body{
-    background-color: #99CDD8;
+    background-color: #d4d4d4;
 }
 
 .top-animate {
@@ -143,6 +143,7 @@ h1
     display: inline;
     padding-top: 10px;
     padding-left: 100px;
+    text-decoration: none;
 }
 
 .affichage_sports
