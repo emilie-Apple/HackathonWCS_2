@@ -169,3 +169,22 @@ h1
     margin-right: auto;
     width: 30%;
 }
+
+.btn.btn-lg.btn-danger.bouton-trophees
+{
+    width: 100%;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.image-trophees
+{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.btn.btn-danger.bouton_trophees {
+    margin-top: 40px;
+    margin-left: 60px;
+}

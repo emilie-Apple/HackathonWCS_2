@@ -18,8 +18,8 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         
         $listetrophees = $em->getRepository('DefiBundle:Trophees')->findAll();
-        return $this->render('DefiBundle:Default:profil.html.twig', array(
-            'listetrophees' => $listetrophees
+        return $this->renderView('FOSUserBundle:Profile:show.html.twig', array(
+            'listetrophees' => $listeTrophees
         ));
     }
 

@@ -9,6 +9,9 @@
 {% endblock %}
 
 {% block body %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style type="text/css">
         html { height: 100% }
         body { height: 80%; margin: 10px; padding: 10px }
@@ -73,12 +76,28 @@
         <div class="panel">
             <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-3" data-parent="#myAccordion"><i class="fa fa-trophy"></i>&nbsp; Mes trophées :</button>
             <div id="collapsible-3" class="collapse">
-                {% for listetrophees in listetrophees %}
-                    {{ listetrophees.idTrophees }}
-                {% endfor %}
+                <div class="container">
+                    <div class="row>"
+                        <div class="col-xs-12">
+                            <img class="image-trophees" src="{{ asset('bundles/defi/img/coupebronze.png') }}" title="Coupe de bronze !" />
+                            <button type="button" class="btn btn-danger bouton_trophees" data-container="body" data-toggle="popover" data-placement="top" data-content="Remportez 5 rencontres !">Bronze</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <img class="image-trophees" src="{{ asset('bundles/defi/img/coupeargent.png') }}" title="La coupe d'argent !" />
+                            <button type="button" class="btn btn-danger bouton_trophees" data-container="body" data-toggle="popover" data-placement="top" data-content="Remportez 25 rencontres !">Argent</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <img class="image-trophees" src="{{ asset('bundles/defi/img/coupeor.png') }}" title="Coupe en Or !" />
+                            <button type="button" class="btn btn-danger bouton_trophees" data-container="body" data-toggle="popover" data-placement="top" data-content="Remportez 255 rencontres !">Or</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
     <!-- Script pour la géolocalisation -->
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
@@ -130,5 +149,6 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="{{ asset('bundles/defi/js/index.js') }}"></script>
     <script src="{{ asset('bundles/defi/js/bootstrap.min.js') }}"></script>
+    <script>$("[data-toggle=popover]").popover();</script>
  {% endblock %}
 
