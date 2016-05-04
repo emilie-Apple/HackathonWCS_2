@@ -1,0 +1,24 @@
+uploads_index:
+    path:     /
+    defaults: { _controller: "DefiBundle:uploads:index" }
+    methods:  GET
+
+uploads_show:
+    path:     /{id}/show
+    defaults: { _controller: "DefiBundle:uploads:show" }
+    methods:  GET
+
+uploads_new:
+    path:     /new
+    defaults: { _controller: "DefiBundle:uploads:new" }
+    methods:  [GET, POST]
+
+uploads_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DefiBundle:uploads:edit" }
+    methods:  [GET, POST]
+
+uploads_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DefiBundle:uploads:delete" }
+    methods:  DELETE

@@ -1,3 +1,7 @@
+defi_uploads:
+    resource: "@DefiBundle/Resources/config/routing/uploads.yml"
+    prefix:   /uploads
+
 defi_homepage:
     path:     /
     defaults: { _controller: DefiBundle:Default:index }
