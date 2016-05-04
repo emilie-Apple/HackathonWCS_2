@@ -23,10 +23,11 @@ DefiBundle\Entity\Utilisateurs:
             nullable: true
             column: date_naissance
         photoProfil:
-            type: string
+            type: text
             length: 255
             column: photo_profil
             nullable: true
+
 
 
     manyToMany:
@@ -42,15 +43,16 @@ DefiBundle\Entity\Utilisateurs:
                     Trophees_id:
                         referencedColumnName: id_trophees
 
-        fidUtilisateurs:
-            targetEntity: DefiBundle\Entity\Sport
-            mappedBy: Utilisateurs
-
-
-
-
-
-
-
+        fidSport:
+            targetEntity: Sport
+            inversedBy: Utilisateurs
+            joinTable:
+                name: Utilisateurs_Sport
+                joinColumns:
+                    Utilisateurs_id:
+                        referencedColumn: id
+                inverseJoinColumns:
+                    Sport_id:
+                        referencedColumnName: id_sport
 
     lifecycleCallbacks: {  }

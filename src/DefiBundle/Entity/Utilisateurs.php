@@ -10,6 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Utilisateurs extends BaseUser
 {
+    public function __toString()
+    {
+        return $this->dateNaissance;
+    }
+
     /**
      * @var int
      */
@@ -38,6 +43,8 @@ class Utilisateurs extends BaseUser
     private $fidtrophees;
 
     private $fidUtilisateurs;
+    
+    private $fidSport;
 
     /**
      * Get id
@@ -211,5 +218,39 @@ class Utilisateurs extends BaseUser
     public function getFidUtilisateurs()
     {
         return $this->fidUtilisateurs;
+    }
+
+    /**
+     * Add fidSport
+     *
+     * @param \DefiBundle\Entity\Sport $fidSport
+     *
+     * @return Utilisateurs
+     */
+    public function addFidSport($fidSport)
+    {
+        $this->fidSport[] = $fidSport;
+
+        return $this;
+    }
+
+    /**
+     * Remove fidSport
+     *
+     * @param \DefiBundle\Entity\Sport $fidSport
+     */
+    public function removeFidSport(\DefiBundle\Entity\Sport $fidSport)
+    {
+        $this->fidSport->removeElement($fidSport);
+    }
+
+    /**
+     * Get fidSport
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFidSport()
+    {
+        return $this->fidSport;
     }
 }

@@ -17,4 +17,28 @@ class DefaultController extends Controller
         
         return $this->render('DefiBundle:Default:profil.html.twig');
     }
+
+    public function defiAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        $listesport = $em->getRepository('DefiBundle:Sport')->findAll();
+        
+        return $this->render('DefiBundle:Default:defi.html.twig', array(
+            'listesport' => $listesport
+        ));
+    }
+
+    public function challengeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        $listechallenger = $em->getRepository('DefiBundle:Utilisateurs')->findAll();
+        
+        return $this->render('DefiBundle:Default:challenger.html.twig', array(
+            'listechallenger' => $listechallenger
+        ) );
+    }
+    
+    
 }

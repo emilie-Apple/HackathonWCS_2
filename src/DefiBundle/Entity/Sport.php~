@@ -86,5 +86,80 @@ class Sport
     {
         return $this->imageSport;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fidcategorie = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fidUtilisateurs = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add fidcategorie
+     *
+     * @param \DefiBundle\Entity\Categorie $fidcategorie
+     *
+     * @return Sport
+     */
+    public function addFidcategorie(\DefiBundle\Entity\Categorie $fidcategorie)
+    {
+        $this->fidcategorie[] = $fidcategorie;
+
+        return $this;
+    }
+
+    /**
+     * Remove fidcategorie
+     *
+     * @param \DefiBundle\Entity\Categorie $fidcategorie
+     */
+    public function removeFidcategorie(\DefiBundle\Entity\Categorie $fidcategorie)
+    {
+        $this->fidcategorie->removeElement($fidcategorie);
+    }
+
+    /**
+     * Get fidcategorie
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFidcategorie()
+    {
+        return $this->fidcategorie;
+    }
+
+    /**
+     * Add fidUtilisateur
+     *
+     * @param \DefiBundle\Entity\Utilisateurs $fidUtilisateur
+     *
+     * @return Sport
+     */
+    public function addFidUtilisateur(\DefiBundle\Entity\Utilisateurs $fidUtilisateur)
+    {
+        $this->fidUtilisateurs[] = $fidUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Remove fidUtilisateur
+     *
+     * @param \DefiBundle\Entity\Utilisateurs $fidUtilisateur
+     */
+    public function removeFidUtilisateur(\DefiBundle\Entity\Utilisateurs $fidUtilisateur)
+    {
+        $this->fidUtilisateurs->removeElement($fidUtilisateur);
+    }
+
+    /**
+     * Get fidUtilisateurs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFidUtilisateurs()
+    {
+        return $this->fidUtilisateurs;
+    }
+}

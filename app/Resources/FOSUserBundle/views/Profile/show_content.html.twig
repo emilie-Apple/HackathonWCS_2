@@ -7,63 +7,78 @@
     <link rel="stylesheet" href="{{ asset('bundles/defi/css/stylesheet.css') }}" type="text/css" />
 {% endblock %}
 
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
-    <p>{{ user.sexe }}</p>
-    <a href="{{ 'edit' }}">Modifier</a>
+{% block body %}
+    <div class="mobilenav">
+        <li><a href="#"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
+        <li><a href="#"><i class="fa fa-user"></i></a>&nbsp; Mon profil</li>
+        <a href="{{ path('defi_liste_sports') }}"><li><i class="fa fa-gamepad"></i>&nbsp; Défis tes amis</li></a>
+        <li><a href="#"><i class="fa fa-trophy"></i></a>&nbsp; Trophées</li>
+        <li><a href="#"><i class="fa fa-users"></i></a>&nbsp; Communauté</li>
+    </div>
+
+    <a href="javascript:void(0)" class="icon">
+        <div class="hamburger">
+            <div class="menui top-menu"></div>
+            <div class="menui mid-menu"></div>
+            <div class="menui bottom-menu"></div>
+        </div>
+    </a>
+    <h1>GoGame</h1>
 
 
+    <div class="photo-profil">
+        <img src="{{ asset('bundles/defi/img/avatar.png') }}" title="Avatar de mon profil !" alt="Mon avatar" />
+    </div>
 
-    {% block body %}
-        <div class="site-container">
-            <div class="site-pusher">
-                <header class="header">
-                    <a href="#" class="header__icon" id="header__icon"></a>
-                    <nav class="menu">
-                        <!-- Notre menu -->
-                    </nav>
-                </header>
-                <div class="site-content">
-                    <div class="container">
-                        <!-- Le contenu du site -->
-                    </div>
-                </div>
-                <div class="site-cache" id="site-cache">
-                </div>
+    <div class="modifier-profil">
+        <a href="{{ 'edit' }}"><span>Modifier mon profil !</span></a>
+    </div>
+
+    <div class="infos-globales">
+        <i class="fa fa-user user" aria-hidden="true">Mes informations :</i>
+        <br /> Pseudonyme: {{ user.pseudo }}
+        <br /> Sexe : {{ user.sexe }}
+        <br /> Date de naissance : {{ user.dateNaissance|date('d-m-Y') }}
+        <br /> Centres d'intêrets :
+    </div>
+
+    <div class="Defi-en-cours">
+        <i class="fa fa-trophy" aria-hidden="true">Mes défis en cours</i>
+        <br /> Liste des défis !
+    </div>
+
+    <div class="Historique">
+    </div>
+
+
+    <div class="accordion" id="myAccordion">
+        <div class="panel">
+            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-1" data-parent="#myAccordion">Question 1?</button>
+            <div id="collapsible-1" class="collapse">
+                <p>Etiam posuere quam ac quam. Maecenas aliquet accumsan leo. Nullam dapibus fermentum ipsum. Etiam quis quam. Integer lacinia. Nulla est.</p>
             </div>
         </div>
-        <div class="header">
-            <img class="menu-burger" src="{{ asset('bundles/defi/img/menu-burger.png') }}" alt="Menu burger" title="Accédez au menu !" />
-            <strong>NomApplication</strong>
-            <!-- Welcome user, à mettre en BDD -->
+        <div class="panel">
+            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-2" data-parent="#myAccordion">Question 2?</button>
+            <div id="collapsible-2" class="collapse">
+                <p>Etiam posuere quam ac quam. Maecenas aliquet accumsan leo. Nullam dapibus fermentum ipsum. Etiam quis quam. Integer lacinia. Nulla est.</p>
+            </div>
         </div>
-
-        <div class="photo-profil">
-            <img src="{{ asset('bundles/defi/img/avatar.png') }}" title="Avatar de mon profil !" alt="Mon avatar" />
-        </div>
-
-        <div class="modifier-profil">
-            <a href="#"><span>Modifier mon profil !</span></a>
-        </div>
-
-        <div class="infos-globales">
-            <i class="fa fa-user user" aria-hidden="true">Mes informations :</i>
-            <br />(A mettre en relation avec la base de données) :
-            <br />Pseudo : /Utilisateurs.pseudo\
-            <br />Sport favoris : /Utilisateurs.Sport\
-        </div>
-
-        <div class="Defi-en-cours">
-            <i class="fa fa-trophy" aria-hidden="true">Mes défis en cours</i>
-            <br /> Liste des défis !
-        </div>
-
-        <div class="Historique">
+        <div class="panel">
+            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#collapsible-3" data-parent="#myAccordion">Question 3?</button>
+            <div id="collapsible-3" class="collapse">
+                <p>Etiam posuere quam ac quam. Maecenas aliquet accumsan leo. Nullam dapibus fermentum ipsum. Etiam quis quam. Integer lacinia. Nulla est.</p>
+            </div>
 
         </div>
+    </div>
 
 
-    {% endblock %}
-</div>
-BOUH
+    <div id="push"></div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="{{ asset('bundles/defi/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('bundles/defi/js/index.js') }}"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+
+{% endblock %}

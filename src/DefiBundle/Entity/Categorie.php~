@@ -56,5 +56,45 @@ class Categorie
     {
         return $this->nomCategorie;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fidCategorie = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add fidCategorie
+     *
+     * @param \DefiBundle\Entity\Sport $fidCategorie
+     *
+     * @return Categorie
+     */
+    public function addFidCategorie(\DefiBundle\Entity\Sport $fidCategorie)
+    {
+        $this->fidCategorie[] = $fidCategorie;
+
+        return $this;
+    }
+
+    /**
+     * Remove fidCategorie
+     *
+     * @param \DefiBundle\Entity\Sport $fidCategorie
+     */
+    public function removeFidCategorie(\DefiBundle\Entity\Sport $fidCategorie)
+    {
+        $this->fidCategorie->removeElement($fidCategorie);
+    }
+
+    /**
+     * Get fidCategorie
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFidCategorie()
+    {
+        return $this->fidCategorie;
+    }
+}
