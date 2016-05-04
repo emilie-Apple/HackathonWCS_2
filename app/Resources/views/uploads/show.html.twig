@@ -6,15 +6,18 @@
     <table>
         <tbody>
 
+        <img src = "{{ app.request.basepath }}/uploads/{{ entity.uploads }}" />
+
             <tr>
                 <th>Id</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
                 <th>Photos</th>
-                <td>{{ entity.photos }}</td>
+                <td>{{ entity.uploads }}</td>
             </tr>
         </tbody>
+
     </table>
 
     <ul>
@@ -22,7 +25,7 @@
             <a href="{{ path('uploads_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('uploads_edit', { 'id': upload.id }) }}">Edit</a>
+            <a href="{{ path('uploads_edit', { 'id': entity.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
