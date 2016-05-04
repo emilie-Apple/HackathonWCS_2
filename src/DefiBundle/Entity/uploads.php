@@ -69,9 +69,7 @@ class uploads
         return $this->uploads;
     }
 
-    /**
-     * @ORM\PrePersist
-     */
+
     public function preUpload()
     {
         if (null !== $this->file) {
@@ -81,10 +79,6 @@ class uploads
 
     }
 
-
-    /**
-     * @ORM\PostPersist
-     */
 
     public function upload()
     {
@@ -101,9 +95,7 @@ class uploads
     }
 
 
-    /**
-     * @ORM\PostRemove
-     */
+
     public function removeUpload()
 
     {

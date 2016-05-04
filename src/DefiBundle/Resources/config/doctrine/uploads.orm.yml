@@ -13,6 +13,7 @@ DefiBundle\Entity\uploads:
         uploads:
             type: string
             length: 255
+            nullable: true
 
     lifecycleCallbacks:
         prePersist: [ preUpload ]

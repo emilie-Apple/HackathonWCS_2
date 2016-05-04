@@ -36,7 +36,7 @@ class uploadsController extends Controller
     public function newAction(Request $request)
     {
         $entity= new uploads();
-        $form = $this->createForm($entity);
+        $form = $this->createForm(new uploadsType());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -44,11 +44,11 @@ class uploadsController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirectToRoute('uploads_show', array('id' => $upload->getId()));
+            return $this->redirectToRoute('uploads_show', array('id' => $entity->getId()));
         }
 
         return $this->render('uploads/new.html.twig', array(
-            'upload' => $upload,
+            'upload' => $entity,
             'form' => $form->createView(),
         ));
     }
@@ -62,7 +62,7 @@ class uploadsController extends Controller
         $deleteForm = $this->createDeleteForm($upload);
 
         return $this->render('uploads/show.html.twig', array(
-            'upload' => $upload,
+            'entity' => $upload,
             'delete_form' => $deleteForm->createView(),
         ));
     }
