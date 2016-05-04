@@ -12,25 +12,29 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Affichage du burger -->
-    <div class="mobilenav">
-        <li><a href="#"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
-        <li><a href="#"><i class="fa fa-user"></i></a>&nbsp; Mon profil</li>
-        <a href="{{ path('defi_liste_sports') }}"><li><i class="fa fa-gamepad"></i>&nbsp; Défis tes amis</li></a>
-        <li><a href="#"><i class="fa fa-trophy"></i></a>&nbsp; Trophées</li>
-        <li><a href="#"><i class="fa fa-users"></i></a>&nbsp; Communauté</li>
+    <div class="header-fixed">
+        <!-- Affichage du burger -->
+        <div class="mobilenav">
+            <li><a href="{{ path('defi_homepage') }}"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
+            <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user"></i>&nbsp; Mon profil</li></a>
+            <li><a href="{{ path('defi_liste_sports') }}"><i class="fa fa-gamepad"></i>&nbsp; Défis tes amis</li></a>
+            <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-trophy"></i>&nbsp; Trophées</li></a>
+            <li><a href="#"><i class="fa fa-users"></i>&nbsp; Communauté</a></li>
+        </div>
+
+        <!-- Fonction Javascript pour l'affichage des barres du Burger -->
+        <a href="javascript:void(0)" class="icon">
+            <div class="hamburger">
+                <div class="menui top-menu"></div>
+                <div class="menui mid-menu"></div>
+                <div class="menui bottom-menu"></div>
+            </div>
+        </a>
+
+        <h1>GoGame</h1>
     </div>
 
-    <!-- Fonction Javascript pour l'affichage des barres du Burger -->
-    <a href="javascript:void(0)" class="icon">
-        <div class="hamburger">
-            <div class="menui top-menu"></div>
-            <div class="menui mid-menu"></div>
-            <div class="menui bottom-menu"></div>
-        </div>
-    </a>
 
-    <h1>GoGame</h1>
 
 
     <div class="col-xs-12 text-center les_challengers">
@@ -66,7 +70,7 @@
                         Etes-vous sur de bien vouloir lancer un duel ?
                         [ATTENTION : Ce choix vous engage à mort et est irréversible.]
                     </p>
-                    <a href="#"><button type="button" class="btn btn-success"><i class="fa fa-gamepad"></i> DUEL !</button></a>
+                    <a href="{{ path('fos_user_profile_show') }}"><button type="button" class="btn btn-success"><i class="fa fa-gamepad"></i> DUEL !</button></a>
                     <a href="{{ 'challengers' }}"><button type="button" class="btn btn-danger">Annuler</button></a>
                 </p>
                 </div>
