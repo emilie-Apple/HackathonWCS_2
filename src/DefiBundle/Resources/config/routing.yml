@@ -6,4 +6,10 @@ defi_homepage:
     path:     /
     defaults: { _controller: DefiBundle:Default:index }
 
+defi_liste_sports:
+    path:    /defi
+    defaults: { _controller: DefiBundle:Default:defi }
 
+defi_liste_users:
+    path:    /defi/challengers
+    defaults: { _controller: DefiBundle:Default:challenge }

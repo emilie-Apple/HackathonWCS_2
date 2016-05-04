@@ -19,6 +19,8 @@ DefiBundle\Entity\Sport:
             type: string
             length: 255
             column: image_sport
+            nullable: true
+
 
     manyToMany:
         fidcategorie:
@@ -35,16 +37,8 @@ DefiBundle\Entity\Sport:
 
 
         fidUtilisateurs:
-            targetEntity: DefiBundle\Entity\Utilisateurs
-            inversedBy: Sport
-            joinTable:
-                name: Utilisateurs_Sport
-                joinColumns:
-                    Sport_id:
-                        referencedColumnName: id_sport
-                inverseJoinColumns:
-                    Utilisateurs_id:
-                        referencedColumn: id
-
+            targetEntity: Utilisateurs
+            mappedBy: Sport
+            cascade: ["persist"]
 
     lifecycleCallbacks: {  }

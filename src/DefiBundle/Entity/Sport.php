@@ -28,6 +28,14 @@ class Sport
     private $fidcategorie;
 
     private $fidUtilisateurs;
+    
+    
+    public function setIdSport($idSport)
+    {
+        $this->idSport = $idSport;
+        
+        return $this;
+    }
 
     /**
      * Get id

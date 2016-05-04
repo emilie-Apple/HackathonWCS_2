@@ -10,6 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Utilisateurs extends BaseUser
 {
+    public function __toString()
+    {
+        return $this->dateNaissance;
+    }
+
     /**
      * @var int
      */
@@ -38,6 +43,8 @@ class Utilisateurs extends BaseUser
     private $fidtrophees;
 
     private $fidUtilisateurs;
+    
+    private $fidSport;
 
     /**
      * Get id
