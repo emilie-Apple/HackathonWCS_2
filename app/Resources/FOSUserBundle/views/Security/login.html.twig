@@ -14,32 +14,30 @@
     {% endblock %}
 
 {% block body %}
-
-
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <div class="header-fixed">
+        <!-- Affichage du burger -->
+        <div class="mobilenav">
+            <li><a href="#"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
+            <li><a href="#"><i class="fa fa-user"></i></a>&nbsp; Mon profil</li>
+            <a href="{{ path('defi_liste_sports') }}"><li><i class="fa fa-gamepad"></i>&nbsp; Défis tes amis</li></a>
+            <li><a href="#"><i class="fa fa-trophy"></i></a>&nbsp; Trophées</li>
+            <li><a href="#"><i class="fa fa-users"></i></a>&nbsp; Communauté</li>
+        </div>
 
-    <!-- Affichage du burger -->
-    <div class="mobilenav">
-        <li><a href="#"><i class="fa fa-home"></i>&nbsp; Accueil</a></li>
-        <li><a href="#"><i class="fa fa-user"></i></a>&nbsp; Mon profil</li>
-        <a href="{{ path('defi_liste_sports') }}"><li><i class="fa fa-gamepad"></i>&nbsp; Défis tes amis</li></a>
-        <li><a href="#"><i class="fa fa-trophy"></i></a>&nbsp; Trophées</li>
-        <li><a href="#"><i class="fa fa-users"></i></a>&nbsp; Communauté</li>
+        <!-- Fonction Javascript pour l'affichage des barres du Burger -->
+        <a href="javascript:void(0)" class="icon">
+            <div class="hamburger">
+                <div class="menui top-menu"></div>
+                <div class="menui mid-menu"></div>
+                <div class="menui bottom-menu"></div>
+            </div>
+        </a>
+
+        <h1>GoGame</h1>
     </div>
 
-    <!-- Fonction Javascript pour l'affichage des barres du Burger -->
-    <a href="javascript:void(0)" class="icon">
-        <div class="hamburger">
-            <div class="menui top-menu"></div>
-            <div class="menui mid-menu"></div>
-            <div class="menui bottom-menu"></div>
-        </div>
-    </a>
-
-    <h1>GoGame</h1>
 
 
 
