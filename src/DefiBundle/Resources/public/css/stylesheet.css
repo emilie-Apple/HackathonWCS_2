@@ -6,7 +6,9 @@
     /* For some Androids */
 }
 body{
-    background-color: #d4d4d4;
+    background-color: #222222;
+    opacity: 0.7;
+    color: white;
 }
 
 .top-animate {
@@ -169,3 +171,20 @@ h1
     margin-right: auto;
     width: 30%;
 }
+
+
+img
+{
+    margin-top: 100px;
+    margin-bottom: 40px;
+    height: 100px;
+    width: 100px;
+    margin-left: 130px;
+
+}
+
+h3
+{
+    color:white;
+}
+

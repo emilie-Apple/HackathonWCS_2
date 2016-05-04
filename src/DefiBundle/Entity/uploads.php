@@ -26,7 +26,7 @@ class uploads
     }
     protected function getUploadRootDir()
     {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+        return '/../../../web/uploads';
     }
 
     public function getWebPath()
