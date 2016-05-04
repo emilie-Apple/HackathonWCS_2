@@ -22,6 +22,8 @@ class Trophees
 
     private $fidTrophees;
 
+    private $descTrophees;
+
 
     /**
      * Get id

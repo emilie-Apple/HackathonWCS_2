@@ -173,6 +173,7 @@ h1
 }
 
 
+
 img
 {
     margin-top: 100px;
@@ -186,5 +187,25 @@ img
 h3
 {
     color:white;
+}
+
+
+.btn.btn-lg.btn-danger.bouton-trophees
+{
+    width: 100%;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.image-trophees
+{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.btn.btn-danger.bouton_trophees {
+    margin-top: 40px;
+    margin-left: 60px;
 }
 
